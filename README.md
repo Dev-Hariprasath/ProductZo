@@ -58,7 +58,7 @@ Ensure that you have the following installed:
 1. **Clone the repository** and navigate to the backend directory:
    ```bash
    git clone https://github.com/Dev-Hariprasath/ProductZo.git
-   cd ProductZo/backend
+   cd ProductZo/Back-End
    ```
 2. **Configure the MySQL Database**:
    - Create a database named `product_db` in your MySQL server.
@@ -71,14 +71,12 @@ Ensure that you have the following installed:
      ```
 
 3. **Build and run the application**:
-   ```bash
-   mvn spring-boot:run
-   ```
+   
 
 ### Frontend Setup
 1. Navigate to the frontend directory:
    ```bash
-   cd ../frontend
+   cd ProductZo/Front-End
    ```
 2. **Install dependencies**:
    ```bash
