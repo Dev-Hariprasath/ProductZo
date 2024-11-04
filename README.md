@@ -1,4 +1,3 @@
-```markdown
 # Product Management Application
 
 ## Overview
@@ -57,6 +56,7 @@ Ensure that you have the following installed:
    ```bash
    git clone https://github.com/username/repo-name.git
    cd repo-name/backend
+me/backend
    ```
 2. **Configure MySQL Database**:
    - Create a database named `product_db` in your MySQL server.
