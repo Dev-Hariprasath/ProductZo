@@ -29,7 +29,6 @@ This repository contains a full-stack application for managing products, featuri
   - `react-slick` and `slick-carousel` for carousel components
   - `tailwindcss` for styling
 - **Dev Tools**:
-  - ESLint for code quality
   - Vite for fast build and development
 
 ### Backend
@@ -54,8 +53,8 @@ Ensure that you have the following installed:
 ### Backend Setup
 1. **Clone the repository** and navigate to the backend directory.
    ```bash
-   git clone https://github.com/username/repo-name.git
-   cd repo-name/backend
+   git clone https://github.com/Dev-Hariprasath/ProductZo.git
+   cd ProductZo/backend
 me/backend
    ```
 2. **Configure MySQL Database**:
