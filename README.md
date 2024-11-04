@@ -1,7 +1,9 @@
-# Product Management Application
+# ProductZo
 
-## Overview
-This repository contains a full-stack application for managing products, featuring a React frontend and a Spring Boot backend with a MySQL database. The application allows users to view, add, update, and organize products by category, providing a complete CRUD (Create, Read, Update, Delete) experience.
+This repository contains a full-stack application for managing products, featuring a React frontend and a Spring Boot backend with a MySQL database. The application provides users with a complete CRUD (Create, Read, Update, Delete) experience, allowing them to view, add, update, and organize products by category.
+
+![Home](Images/home.png)
+
 
 ## Table of Contents
 - [Features](#features)
@@ -16,29 +18,30 @@ This repository contains a full-stack application for managing products, featuri
 ## Features
 - **Product Listing**: View a categorized list of products.
 - **Add Product**: Create new product entries.
-- **Update Product**: Modify details of an existing product.
-- **Product Details**: View detailed information of a product.
-- **Responsive UI**: A user-friendly and modern interface built with React.
+- **Update Product**: Modify details of existing products.
+- **Product Details**: View detailed information about each product.
+- **Responsive UI**: Modern, user-friendly interface built with React.
 
 ## Tech Stack
 ### Frontend
-- **Framework**: React (React Router for routing)
-- **Libraries**: 
+- **Framework**: React (with React Router for routing)
+- **Libraries**:
   - `axios` for HTTP requests
-  - `react-icons` for icons
-  - `react-slick` and `slick-carousel` for carousel components
+  - `react-icons` for iconography
+  - `react-slick` and `slick-carousel` for carousel functionality
   - `tailwindcss` for styling
-- **Dev Tools**:
+- **Development Tools**:
   - Vite for fast build and development
 
 ### Backend
 - **Framework**: Spring Boot
 - **Dependencies**:
-  - `spring-boot-starter-data-jpa` for database interactions
+  - `spring-boot-starter-data-jpa` for database operations
   - `spring-boot-starter-web` for RESTful web services
-  - `mysql-connector-j` for MySQL database connection
+  - `mysql-connector-j` for MySQL integration
   - `lombok` for reducing boilerplate code
-  - `spring-boot-devtools` for development tools
+  - `spring-boot-devtools` for enhancing the development experience
+
 
 ### Database
 - **MySQL**: Relational database for storing product data.
@@ -46,33 +49,34 @@ This repository contains a full-stack application for managing products, featuri
 ## Installation and Setup
 ### Prerequisites
 Ensure that you have the following installed:
-- **Node.js** (for the frontend)
+- **Node.js** (for running the frontend)
 - **Java 11 or higher** (for the backend)
-- **MySQL** (for database)
+- **MySQL** (as the database)
+
 
 ### Backend Setup
-1. **Clone the repository** and navigate to the backend directory.
+1. **Clone the repository** and navigate to the backend directory:
    ```bash
    git clone https://github.com/Dev-Hariprasath/ProductZo.git
    cd ProductZo/backend
-me/backend
    ```
-2. **Configure MySQL Database**:
+2. **Configure the MySQL Database**:
    - Create a database named `product_db` in your MySQL server.
-   - Update `application.properties` with your MySQL credentials.
+   - Update `application.properties` with your MySQL credentials:
      ```properties
      spring.datasource.url=jdbc:mysql://localhost:3306/product_db
      spring.datasource.username=your_username
      spring.datasource.password=your_password
      spring.jpa.hibernate.ddl-auto=update
      ```
-3. **Build and Run**:
+
+3. **Build and run the application**:
    ```bash
    mvn spring-boot:run
    ```
 
 ### Frontend Setup
-1. Navigate to the frontend directory.
+1. Navigate to the frontend directory:
    ```bash
    cd ../frontend
    ```
@@ -86,44 +90,114 @@ me/backend
    ```
 4. Access the application at [http://localhost:3000](http://localhost:3000).
 
-## Project Structure
-### Frontend
-- `src/`
-  - `components/`: Reusable UI components like Navbar, Footer, ProductDetails, etc.
-  - `Pages/`: Main pages such as HomePage.
-  - `App.jsx`: Main application file that includes routing.
 
-### Backend
+## Project Structure
+### Frontend (`/frontend`)
+- `src/`
+  - `components/`: Reusable UI components (e.g., `Navbar`, `Footer`, `ProductDetails`)
+  - `Pages/`: Main pages such as `HomePage`
+  - `App.jsx`: Main application file that includes routing
+
+### Backend (`/backend`)
 - `src/main/java/com/productzo/productzo/`
-  - `Model/`: Entity class `Product.java`.
-  - `Repository/`: Interface `ProductRepo.java`.
-  - `ProductzoApplication.java`: Main application class.
+  - `model/`: Entity classes (e.g., `Product.java`)
+  - `repository/`: Repository interfaces (e.g., `ProductRepo.java`)
+  - `controller/`: Controllers for handling HTTP requests
+  - `ProductzoApplication.java`: Main application class
+
 
 ## Usage
-### Add Product
-Navigate to `/products/addProduct` and fill out the form to add a new product.
+### Add a Product
+Navigate to `/products/addProduct` and fill out the form to create a new product.
 
-### Update Product
-Navigate to `/products/update/:productId` and edit the product details. Submit to update.
+![Add Product](Images/addproduct.png)
+
+### Update a Product
+Navigate to `/products/update/:productId`, edit the product details, and submit the form to update.
+
+![Update Product](Images/updateproduct.png)
 
 ### View Product List
-The home page lists products, grouped by category. Click on a product to see details.
+The home page displays a list of products categorized by type. Click on a product to view its details.
+
+![View All Products](Images/products.png)
+
 
 ## API Endpoints
+### Frontend (React.js)
+
+1. **Retrieve all products**
+   
+   - **GET** `/productzo/api/products`
+     
+     ![GET Request for Products](Images/fget.png)
+
+2. **Retrieve a product by ID**
+   
+   - **GET** `/productzo/api/products/${productId}`
+     ![GET Request for One Product](Images/fget1.png)
+
+3. **Add a new product**
+   
+   - **POST** `/productzo/api/addProduct`
+     
+     ![POST Request to Add Product](Images/fput.png)
+
+4. **Update a product**
+   
+   - **PUT** `/productzo/api/updateProduct`
+     
+     ![PUT Request to Update Product](Images/fpost.png)
+
+5. **Delete a product**
+   - **DELETE** `/productzo/api/delete/${productId}`
+     ![DELETE Request to Delete Product](Images/fdelete.png)
+
 ### Backend (Spring Boot)
-- `GET /api/products`: Retrieve all products.
-- `GET /api/products/{productId}`: Get details of a product by ID.
-- `POST /api/addProduct`: Add a new product.
-- `PUT /updateProduct`: Update an existing product.
-- `DELETE /api/products/{productId}`: Delete a product by ID.
+
+1. **Retrieve all products**
+   
+   - **GET** `/api/products`
+     
+     ![GET Request for Products](Images/get.png)
+
+
+2. **Retrieve a product by ID**
+   
+   - **GET** `/api/products/{productId}`
+     
+     ![GET Request for One Product](Images/get1.png)
+
+
+3. **Add a new product**
+   
+   - **POST** `/api/addProduct`
+     
+     ![POST Request to Add Product](Images/post.png)
+     
+
+4. **Update a product**
+   
+   - **PUT** `/api/updateProduct`
+     
+     ![PUT Request to Update Product](Images/put.png)
+     
+
+5. **Delete a product**
+    
+   - **DELETE** `/api/products/{productId}`
+     
+     ![DELETE Request to Delete Product](Images/delete.png)
+     
 
 ## Contributing
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/YourFeature`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Open a Pull Request.
 
 ## License
 This project is licensed under the MIT License.
-```
+
+--- 
