@@ -1,3 +1,4 @@
+```markdown
 # Product Management Application
 
 ## Overview
@@ -56,3 +57,74 @@ Ensure that you have the following installed:
    ```bash
    git clone https://github.com/username/repo-name.git
    cd repo-name/backend
+   ```
+2. **Configure MySQL Database**:
+   - Create a database named `product_db` in your MySQL server.
+   - Update `application.properties` with your MySQL credentials.
+     ```properties
+     spring.datasource.url=jdbc:mysql://localhost:3306/product_db
+     spring.datasource.username=your_username
+     spring.datasource.password=your_password
+     spring.jpa.hibernate.ddl-auto=update
+     ```
+3. **Build and Run**:
+   ```bash
+   mvn spring-boot:run
+   ```
+
+### Frontend Setup
+1. Navigate to the frontend directory.
+   ```bash
+   cd ../frontend
+   ```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+4. Access the application at [http://localhost:3000](http://localhost:3000).
+
+## Project Structure
+### Frontend
+- `src/`
+  - `components/`: Reusable UI components like Navbar, Footer, ProductDetails, etc.
+  - `Pages/`: Main pages such as HomePage.
+  - `App.jsx`: Main application file that includes routing.
+
+### Backend
+- `src/main/java/com/productzo/productzo/`
+  - `Model/`: Entity class `Product.java`.
+  - `Repository/`: Interface `ProductRepo.java`.
+  - `ProductzoApplication.java`: Main application class.
+
+## Usage
+### Add Product
+Navigate to `/products/addProduct` and fill out the form to add a new product.
+
+### Update Product
+Navigate to `/products/update/:productId` and edit the product details. Submit to update.
+
+### View Product List
+The home page lists products, grouped by category. Click on a product to see details.
+
+## API Endpoints
+### Backend (Spring Boot)
+- `GET /api/products`: Retrieve all products.
+- `GET /api/products/{productId}`: Get details of a product by ID.
+- `POST /api/addProduct`: Add a new product.
+- `PUT /updateProduct`: Update an existing product.
+- `DELETE /api/products/{productId}`: Delete a product by ID.
+
+## Contributing
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Open a Pull Request.
+
+## License
+This project is licensed under the MIT License.
+```
