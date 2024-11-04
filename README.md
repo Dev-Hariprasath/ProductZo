@@ -131,27 +131,36 @@ The home page displays a list of products categorized by type. Click on a produc
    - **GET** `/productzo/api/products`
      
      ![GET Request for Products](Images/fget.png)
+     
 
 2. **Retrieve a product by ID**
    
    - **GET** `/productzo/api/products/${productId}`
+     
      ![GET Request for One Product](Images/fget1.png)
+     
 
 3. **Add a new product**
    
    - **POST** `/productzo/api/addProduct`
      
-     ![POST Request to Add Product](Images/fput.png)
+     ![POST Request to Add Product](Images/fpost.png)
+     
 
 4. **Update a product**
    
    - **PUT** `/productzo/api/updateProduct`
      
-     ![PUT Request to Update Product](Images/fpost.png)
+     ![PUT Request to Update Product](Images/fput.png)
+     
 
 5. **Delete a product**
+   
    - **DELETE** `/productzo/api/delete/${productId}`
+     
      ![DELETE Request to Delete Product](Images/fdelete.png)
+
+
 
 ### Backend (Spring Boot)
 
@@ -188,6 +197,7 @@ The home page displays a list of products categorized by type. Click on a produc
    - **DELETE** `/api/products/{productId}`
      
      ![DELETE Request to Delete Product](Images/delete.png)
+
      
 
 ## Contributing
